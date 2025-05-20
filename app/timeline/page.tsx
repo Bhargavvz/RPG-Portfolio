@@ -44,7 +44,7 @@ export default function TimelinePage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Sidebar - Timeline Navigator */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24">
+            <div className="lg:sticky lg:top-24">
               <TimelineNavigator />
               
               <Card className="mt-6 bg-card/50 border border-border">
@@ -86,7 +86,7 @@ export default function TimelinePage() {
           {/* Main Content - Timeline */}
           <div className="lg:col-span-2">
             <Card className="bg-card/50 border border-border rpg-card">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <p className="text-muted-foreground mb-6">
                   The Chronicle documents your journey as a developer through the years. 
                   Each event marks a significant milestone in your quest to become a master of the digital realm.
@@ -94,12 +94,12 @@ export default function TimelinePage() {
                 </p>
                 
                 <Tabs defaultValue="all" className="w-full">
-                  <TabsList className="mb-6">
-                    <TabsTrigger value="all">Complete Chronicle</TabsTrigger>
-                    <TabsTrigger value="career">Career</TabsTrigger>
-                    <TabsTrigger value="education">Education</TabsTrigger>
-                    <TabsTrigger value="project">Projects</TabsTrigger>
-                    <TabsTrigger value="personal">Personal</TabsTrigger>
+                  <TabsList className="mb-6 flex-wrap h-auto">
+                    <TabsTrigger value="all" className="mb-2 sm:mb-0">Complete Chronicle</TabsTrigger>
+                    <TabsTrigger value="career" className="mb-2 sm:mb-0">Career</TabsTrigger>
+                    <TabsTrigger value="education" className="mb-2 sm:mb-0">Education</TabsTrigger>
+                    <TabsTrigger value="project" className="mb-2 sm:mb-0">Projects</TabsTrigger>
+                    <TabsTrigger value="personal" className="mb-2 sm:mb-0">Personal</TabsTrigger>
                   </TabsList>
                   
                   <TabsContent value="all">
@@ -130,10 +130,10 @@ export default function TimelinePage() {
                                     className="p-4 bg-card rounded-lg border border-border hover:border-amber-700/50 transition-all duration-300"
                                   >
                                     <div className="flex items-start gap-3">
-                                      <div className="p-2 rounded-full bg-gray-800/50">
+                                      <div className="p-2 rounded-full bg-gray-800/50 flex-shrink-0">
                                         {getEventIcon(event.type)}
                                       </div>
-                                      <div>
+                                      <div className="flex-1 min-w-0">
                                         <Badge className={`
                                           ${event.type === 'career' ? 'bg-blue-900 text-blue-300' : ''}
                                           ${event.type === 'education' ? 'bg-purple-900 text-purple-300' : ''}
@@ -143,8 +143,8 @@ export default function TimelinePage() {
                                         `}>
                                           {event.type}
                                         </Badge>
-                                        <h3 className="text-xl font-bold mt-2">{event.title}</h3>
-                                        <p className="text-gray-400 mt-1">{event.description}</p>
+                                        <h3 className="text-xl font-bold mt-2 break-words">{event.title}</h3>
+                                        <p className="text-gray-400 mt-1 break-words">{event.description}</p>
                                       </div>
                                     </div>
                                   </div>
@@ -188,10 +188,10 @@ export default function TimelinePage() {
                                       className="p-4 bg-card rounded-lg border border-border hover:border-amber-700/50 transition-all duration-300"
                                     >
                                       <div className="flex items-start gap-3">
-                                        <div className="p-2 rounded-full bg-gray-800/50">
+                                        <div className="p-2 rounded-full bg-gray-800/50 flex-shrink-0">
                                           {getEventIcon(event.type)}
                                         </div>
-                                        <div>
+                                        <div className="flex-1 min-w-0">
                                           <Badge className={`
                                             ${event.type === 'career' ? 'bg-blue-900 text-blue-300' : ''}
                                             ${event.type === 'education' ? 'bg-purple-900 text-purple-300' : ''}
@@ -201,8 +201,8 @@ export default function TimelinePage() {
                                           `}>
                                             {event.type}
                                           </Badge>
-                                          <h3 className="text-xl font-bold mt-2">{event.title}</h3>
-                                          <p className="text-gray-400 mt-1">{event.description}</p>
+                                          <h3 className="text-xl font-bold mt-2 break-words">{event.title}</h3>
+                                          <p className="text-gray-400 mt-1 break-words">{event.description}</p>
                                         </div>
                                       </div>
                                     </div>

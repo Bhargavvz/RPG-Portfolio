@@ -38,22 +38,22 @@ export default function AchievementsPage() {
       <div className="max-w-7xl mx-auto px-4 pt-24 pb-12">
         <h1 className="text-3xl font-bold mb-6">Achievements</h1>
         
-        <div className="bg-card/50 rounded-lg p-6 border border-border">
+        <div className="bg-card/50 rounded-lg p-4 sm:p-6 border border-border">
           <p className="text-muted-foreground mb-6">
             Throughout your journey as a developer, you've unlocked various achievements. 
             Each achievement represents a milestone or accomplishment in your professional career.
           </p>
           
           <Tabs defaultValue="All" className="w-full">
-            <TabsList className="mb-6">
-              <TabsTrigger value="All">All</TabsTrigger>
+            <TabsList className="mb-6 flex-wrap h-auto">
+              <TabsTrigger value="All" className="mb-2 sm:mb-0">All</TabsTrigger>
               {achievementTypes.map((type) => (
-                <TabsTrigger key={type} value={type}>{type}</TabsTrigger>
+                <TabsTrigger key={type} value={type} className="mb-2 sm:mb-0">{type}</TabsTrigger>
               ))}
             </TabsList>
             
             <TabsContent value="All">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {allAchievements.map((achievement) => (
                   <AchievementCard key={achievement.id} achievement={achievement} />
                 ))}
@@ -62,7 +62,7 @@ export default function AchievementsPage() {
             
             {achievementTypes.map((type) => (
               <TabsContent key={type} value={type}>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {getAchievementsByType(type).map((achievement) => (
                     <AchievementCard key={achievement.id} achievement={achievement} />
                   ))}

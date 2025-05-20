@@ -148,14 +148,14 @@ const TimelineNavigator = () => {
                 <div className="mt-1">
                   {getEventIcon(event.type)}
                 </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h4 className="font-semibold">{event.title}</h4>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <h4 className="font-semibold break-words">{event.title}</h4>
                     <Badge variant="outline" className={`text-xs ${getTypeColor(event.type)}`}>
                       {event.type}
                     </Badge>
                   </div>
-                  <p className="text-sm opacity-80">{event.description}</p>
+                  <p className="text-sm opacity-80 break-words">{event.description}</p>
                 </div>
               </div>
             </Card>

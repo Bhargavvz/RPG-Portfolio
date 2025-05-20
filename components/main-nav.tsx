@@ -14,7 +14,6 @@ import {
   LucideMenu,
   LucideX,
   LucideScroll,
-  LucideFlame,
   LucideUser,
   LucideMessageCircle
 } from 'lucide-react';
@@ -134,30 +133,30 @@ export function MainNav() {
         <div className="md:hidden flex items-center">
           <Sheet>
             <SheetTrigger asChild>
-              <Button className="rpg-btn">
-                <LucideMenu className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="hover:bg-amber-500/10">
+                <LucideMenu className="h-6 w-6 text-amber-500" />
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[280px] sm:w-[350px] border-r-4 border-amber-800 bg-gradient-to-b from-gray-900 to-gray-950">
-              <div className="flex flex-col gap-6 py-6">
+              <div className="flex flex-col gap-4 py-6">
                 {routes.map((route) => (
                   <SheetClose asChild key={route.href}>
                     <Button
                       variant="ghost"
                       asChild
                       className={cn(
-                        "justify-start h-14 overflow-hidden transition-all",
+                        "justify-start h-auto py-3 px-4 transition-all",
                         route.active ? 
-                          "bg-gradient-to-r from-amber-800/50 to-transparent border-l-4 border-amber-500 pl-4" : 
-                          "hover:bg-amber-700/10 hover:border-l-4 hover:border-amber-500/50 hover:pl-4"
+                          "bg-gradient-to-r from-amber-800/50 to-transparent border-l-4 border-amber-500" : 
+                          "hover:bg-amber-700/10 hover:border-l-4 hover:border-amber-500/50"
                       )}
                     >
-                      <Link href={route.href} className="flex items-center">
-                        <div className="mr-4 p-2 rounded-full bg-gray-800">
+                      <Link href={route.href} className="flex items-center gap-3">
+                        <div className="p-2 rounded-full bg-gray-800/50">
                           {route.icon}
                         </div>
-                        <div className="flex flex-col">
-                          <span className="font-bold">{route.label}</span>
+                        <div className="flex flex-col items-start">
+                          <span className="font-medium text-base">{route.label}</span>
                           <span className="text-xs text-gray-400">{route.description}</span>
                         </div>
                       </Link>
@@ -171,9 +170,8 @@ export function MainNav() {
         
         <div className="mx-auto md:mx-0 flex-1 md:flex-none">
           <div className="flex items-center">
-            <LucideFlame className="h-6 w-6 text-amber-500 mr-2 animate-pulse" />
             <h1 className="text-2xl font-bold bg-gradient-to-r from-amber-500 to-yellow-500 bg-clip-text text-transparent">
-              Bhargav Adepu
+                  Bhargav Adepu
             </h1>
           </div>
         </div>
